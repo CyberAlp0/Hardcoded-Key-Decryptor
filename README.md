@@ -193,6 +193,10 @@ No code changes needed.
 - **DES via TripleDES:** modern `cryptography` doesn't expose single DES
   directly, so the engine uses `TripleDES` with an 8-byte key. 3DES with one
   repeated key is mathematically identical to DES.
+- **RC2 key size:** recent `cryptography` releases accept only **128-bit
+  (16-byte)** RC2 keys, even though RC2 historically allowed shorter keys. If a
+  target uses a shorter RC2 key, use an older `cryptography` release or another
+  RC2 implementation.
 - **Key-derivation branches:** some applications derive a key from a passphrase
   (e.g. .NET's `PasswordDeriveBytes` / PBKDF1) instead of using a fixed byte
   array. This tool handles fixed keys and raw key/IV input, not on-the-fly
@@ -200,6 +204,20 @@ No code changes needed.
   key/IV and add them as a profile.
 - **Block size** is assumed to be 8 bytes (true for DES and RC2), which the
   PKCS7 logic relies on.
+
+---
+
+## Development
+
+Run the test suite (round-trip encrypt/decrypt plus helper checks):
+
+```bash
+pip install -r requirements-dev.txt
+pytest -v
+```
+
+CI runs the same suite on every push and pull request across Python 3.9–3.13
+(see [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
 
 ---
 
