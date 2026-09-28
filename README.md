@@ -1,5 +1,9 @@
 # Hardcoded-Key-Decryptor
 
+[![CI](https://github.com/CyberAlp0/Hardcoded-Key-Decryptor/actions/workflows/ci.yml/badge.svg)](https://github.com/CyberAlp0/Hardcoded-Key-Decryptor/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
+
 ![Hardcoded-Key-Decryptor — symmetric key-recovery tool](.github/preview.png)
 
 ![Usage demo](.github/demo.gif)
