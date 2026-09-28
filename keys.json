@@ -1,0 +1,39 @@
+{
+  "_instructions": [
+    "This file holds the key material the tool uses. Each entry under 'profiles'",
+    "is one recovered key set. To use the tool on YOUR target, do the following:",
+    "  1. Decompile the target binary and find its crypto/helper class.",
+    "  2. Recover the KEY and IV byte arrays, and note the cipher (des or rc2)",
+    "     and the mode (cbc or ecb).",
+    "  3. Add a profile below: give it a name, fill in key/iv as hex bytes.",
+    "  4. Delete the example profiles you don't need.",
+    "Fields per profile:",
+    "  description : free text, shown by --list. Put the source here.",
+    "  method      : 'des' (8-byte key/iv) or 'rc2' (usually 5-8 bytes).",
+    "  mode        : 'cbc' (needs an iv) or 'ecb' (iv ignored).",
+    "  key / iv    : hex bytes. Spaces, commas, or 0x prefixes are all fine.",
+    "Lines starting with '_' are comments and are ignored by the tool."
+  ],
+
+  "profiles": {
+
+    "example-des-cbc": {
+      "_comment": "EXAMPLE ONLY - replace with your own recovered key/iv, or delete.",
+      "description": "<describe where these keys came from>",
+      "method": "des",
+      "mode": "cbc",
+      "key": "00 00 00 00 00 00 00 00",
+      "iv":  "00 00 00 00 00 00 00 00"
+    },
+
+    "example-rc2-cbc": {
+      "_comment": "EXAMPLE ONLY - replace with your own recovered key/iv, or delete.",
+      "description": "<describe where these keys came from>",
+      "method": "rc2",
+      "mode": "cbc",
+      "key": "00 00 00 00 00",
+      "iv":  "00 00 00 00 00"
+    }
+
+  }
+}
