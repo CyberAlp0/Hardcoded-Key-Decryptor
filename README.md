@@ -2,6 +2,8 @@
 
 ![Hardcoded-Key-Decryptor — symmetric key-recovery tool](.github/preview.png)
 
+![Usage demo](.github/demo.gif)
+
 A generic symmetric **decrypt / encrypt** tool for recovering secrets from
 applications that use **DES or RC2 in CBC (or ECB) mode with PKCS7 padding** and
 **hardcoded keys**.
